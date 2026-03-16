@@ -119,7 +119,6 @@ def update_profile():
     return redirect(url_for("dashboard"))
 
 
-#@app.route("/admin/users")
 @app.route("/admin/users/<id>")
 @login_required
 # @admin_required
@@ -144,6 +143,26 @@ def bootstrap_admin():
     )
     flash("Admin created. Change default password right away.", "success")
     return redirect(url_for("login"))
+
+
+@app.route("/view")
+@login_required
+def view_file():
+    filename = request.args.get("filename")
+    if not filename:
+        flash("Filename is required.", "error")
+        return redirect(url_for("dashboard"))
+
+    try:
+        with open(f"templates/{filename}", "r") as f:
+            content = f.read()
+        return f"<pre>{content}</pre>"
+    except FileNotFoundError:
+        flash("File not found.", "error")
+        return redirect(url_for("dashboard"))
+    except Exception as e:
+        flash(str(e), "error")
+        return redirect(url_for("dashboard"))
 
 
 if __name__ == "__main__":
