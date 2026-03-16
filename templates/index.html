@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h1>Basic Auth Demo</h1>
+  <p>Simple Flask app with user/admin role, register and login.</p>
+  <div class="actions">
+    <a class="btn" href="{{ url_for('register') }}">Create account</a>
+    <a class="btn secondary" href="{{ url_for('login') }}">Login</a>
+  </div>
+  <p class="hint">Need an admin quickly? Visit <code>/bootstrap-admin</code>.</p>
+</section>
+{% endblock %}

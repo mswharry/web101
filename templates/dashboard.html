@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h2>User Dashboard</h2>
+  <p><strong>ID:</strong> {{ user['id'] }}</p>
+  <p><strong>Username:</strong> {{ user['username'] }}</p>
+<!--  <p><strong>Role:</strong> {{ user['role'] }}</p>-->
+  <p><strong>Bio:</strong> {{ user['bio']|safe }}</p>
+  <hr />
+
+  <h3>Update profile bio</h3>
+  <form method="post" action="{{ url_for('update_profile') }}" class="form-grid">
+    <label>Bio</label>
+    <textarea name="bio" rows="4" maxlength="200">{{ user['bio'] or '' }}</textarea>
+    <button class="btn" type="submit">Save</button>
+  </form>
+</section>
+{% endblock %}

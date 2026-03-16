@@ -1,0 +1,160 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2430;
+  --muted: #5d6778;
+  --primary: #0f766e;
+  --primary-dark: #0a5b54;
+  --border: #d8dee8;
+  --error: #b42318;
+  --success: #027a48;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #eef2f8 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.welcome {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card.narrow {
+  max-width: 420px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 10px;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #c8d0dc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+.btn.secondary {
+  background: #344054;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.flash-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.flash {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.flash.error {
+  color: var(--error);
+  border-color: #fecdca;
+  background: #fffbfa;
+}
+
+.flash.success {
+  color: var(--success);
+  border-color: #abefc6;
+  background: #f6fef9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
