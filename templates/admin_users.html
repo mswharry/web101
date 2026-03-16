@@ -9,6 +9,7 @@
         <th>Username</th>
         <th>Role</th>
         <th>Bio</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
           <td>{{ u['username'] }}</td>
           <td>{{ u['role'] }}</td>
           <td>{{ u['bio'] }}</td>
+          <td><a href="{{ url_for('admin_user_by_id', id=u.id) }}">View</a></td>
         </tr>
       {% endfor %}
     </tbody>

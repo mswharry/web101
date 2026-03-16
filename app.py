@@ -119,12 +119,16 @@ def update_profile():
     return redirect(url_for("dashboard"))
 
 
+@app.route("/admin/users")
+@login_required
+@admin_required
+def admin_users():
+    users = get_all_users()
+    return render_template("admin_users.html", users=users)
+
+
 @app.route("/admin/users/<id>")
 @login_required
-# @admin_required
-# def admin_users():
-#     users = get_all_users()
-#     return render_template("admin_users.html", users=users)
 def admin_user_by_id(id):
     user = get_user_by_id(id)
     return render_template("dashboard.html", user=user)
